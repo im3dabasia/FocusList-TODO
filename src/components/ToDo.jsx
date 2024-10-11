@@ -15,18 +15,18 @@ import InputBox from './InputBox'
 import ToDoList from './ToDoList'
 
 const ToDo = () => {
-  return (
-    <ToastProvider>
-      <TaskProvider>
-        <div className='app-container'>
-          <h1>FocusList</h1>
-          <h2>Organize today, achieve tomorrow</h2>
-          <InputBox />
-          <ToDoList />
-        </div>
-      </TaskProvider>
-    </ToastProvider>
-  )
+	return (
+		<ToastProvider>
+			<TaskProvider>
+				<div className="app-container">
+					<h1>FocusList</h1>
+					<h2>Organize today, achieve tomorrow</h2>
+					<InputBox />
+					<ToDoList />
+				</div>
+			</TaskProvider>
+		</ToastProvider>
+	)
 }
 
 export default ToDo

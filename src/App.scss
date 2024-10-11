@@ -1,18 +1,34 @@
+/**
+ * FocusList Stylesheet
+ *
+ * This stylesheet provides the styles for the FocusList Todo App.
+ *
+ * Variables:
+ * $color_1              - Primary text color (dark grey)
+ * $color_2              - Primary light color (white)
+ * $font-family_1        - Primary font family (Ubuntu)
+ * $background-color_1   - Default background color for cards and containers
+ * $background-color_2   - General page background color (light grey)
+ * $background-color_3   - Hover background color for task items
+ * $background-color_4   - Primary accent color (blue)
+ * $background-color_5   - Grey background for disabled or completed tasks
+ * $background-color_6   - Success color (green)
+ * $background-color_7   - Error color (red)
+ * $border-color_1       - Primary border color for inputs (blue)
+ */
+
+
 $color_1: #333;
 $color_2: white;
-$color_3: #555;
-$color_4: #fff;
 $font-family_1: 'Ubuntu',
 sans-serif;
 $background-color_1: #ffffff;
 $background-color_2: #f0f4f8;
-$background-color_3: #fff;
-$background-color_4: #f9f9f9;
-$background-color_5: #2196f3;
-$background-color_6: #ddd;
-$background-color_7: #d2d2d2;
-$background-color_8: #4caf50;
-$background-color_9: #f44336;
+$background-color_3: #f9f9f9;
+$background-color_4: #2196f3;
+$background-color_5: #d2d2d2;
+$background-color_6: #4caf50;
+$background-color_7: #f44336;
 $border-color_1: #2196f3;
 
 /* Input Form */
@@ -106,7 +122,7 @@ h2 {
 		transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 
 		&:hover {
-			background-color: $background-color_5;
+			background-color: $background-color_4;
 			color: $color_2;
 			transform: scale(1.2);
 		}
@@ -131,12 +147,12 @@ h2 {
 	padding: 18px;
 	border: 2px solid #ddd;
 	border-radius: 12px;
-	background-color: $background-color_3;
+	background-color: $background-color_1;
 	transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
 	&:hover {
-		background-color: $background-color_4;
+		background-color: $background-color_3;
 		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 		transform: scale(1.02);
 	}
@@ -183,9 +199,12 @@ h2 {
 		height: 50px;
 		width: 50px;
 		transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		&:hover {
-			background-color: $background-color_5;
+			background-color: $background-color_4;
 			color: $color_2;
 			transform: scale(1.2);
 		}
@@ -209,13 +228,13 @@ h2 {
 		padding: 10px 20px;
 		font-size: 1rem;
 		border: none;
-		background-color: $background-color_6;
+		background-color: $background-color_5;
 		border-radius: 8px;
 		cursor: pointer;
 		transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 
 		&:hover {
-			background-color: $background-color_5;
+			background-color: $background-color_4;
 			color: $color_2;
 			transform: scale(1.1);
 		}
@@ -227,7 +246,7 @@ h2 {
 }
 
 .task-item.completed {
-	background-color: $background-color_7;
+	background-color: $background-color_5;
 	opacity: 0.8;
 
 	p {
@@ -238,7 +257,7 @@ h2 {
 .empty-task-message {
 	text-align: center;
 	margin-top: 20px;
-	color: $color_3;
+	color: $color_1;
 	font-size: 1.2rem;
 
 	p {
@@ -256,22 +275,22 @@ h2 {
 .toast {
 	padding: 10px 20px;
 	border-radius: 5px;
-	color: $color_4;
+	color: $color_2;
 	margin-bottom: 10px;
 	font-size: 14px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .toast-success {
-	background-color: $background-color_8;
+	background-color: $background-color_6;
 }
 
 .toast-error {
-	background-color: $background-color_9;
+	background-color: $background-color_7;
 }
 
 .toast-info {
-	background-color: $background-color_5;
+	background-color: $background-color_4;
 }
 
 @media (max-width: 768px) {

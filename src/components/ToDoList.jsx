@@ -24,40 +24,44 @@ import ToDoItem from './ToDoItem'
  * @package FocusList
  */
 const ToDoList = () => {
-  const { tasks } = useTaskContext()
-  const [ filter, setFilter ] = useState( 'all' )
+	const { tasks } = useTaskContext()
+	const [ filter, setFilter ] = useState( 'all' )
 
-  const filteredTasks = tasks
-    .filter( ( task ) => {
-      if ( 'completed' === filter ) {
-        return task.isDone
-      } else if ( 'pending' === filter ) {
-        return ! task.isDone
-      }
-      return true
-    } )
-    .sort( ( a, b ) => a.isDone - b.isDone )
+	const filteredTasks = tasks
+		.filter( ( task ) => {
+			if ( 'completed' === filter ) {
+				return task.isDone
+			} else if ( 'pending' === filter ) {
+				return !task.isDone
+			}
+			return true
+		} )
+		.sort( ( a, b ) => a.isDone - b.isDone )
 
-  return (
-    <div className='todo-list-container'>
-      <div className='filter-buttons'>
-        <button onClick={() => setFilter( 'all' )}>All Tasks</button>
-        <button onClick={() => setFilter( 'completed' )}>Completed</button>
-        <button onClick={() => setFilter( 'pending' )}>Pending</button>
-      </div>
+	return (
+		<div className="todo-list-container">
+			<div className="filter-buttons">
+				<button onClick={ () => setFilter( 'all' ) }>All Tasks</button>
+				<button onClick={ () => setFilter( 'completed' ) }>
+					Completed
+				</button>
+				<button onClick={ () => setFilter( 'pending' ) }>Pending</button>
+			</div>
 
-      <div className='todo-list'>
-        {filteredTasks.length > 0 ? (
-          filteredTasks.map( ( task ) => <ToDoItem key={task.id} task={task} /> )
-        ) : (
-          <div className='empty-task-message'>
-            <p>🎉 You are all caught up! 🎉</p>
-            <p>Start by adding a new task!</p>
-          </div>
-        )}
-      </div>
-    </div>
-  )
+			<div className="todo-list">
+				{ filteredTasks.length > 0 ? (
+					filteredTasks.map( ( task ) => (
+						<ToDoItem key={ task.id } task={ task } />
+					) )
+				) : (
+					<div className="empty-task-message">
+						<p>🎉 You are all caught up! 🎉</p>
+						<p>Start by adding a new task!</p>
+					</div>
+				) }
+			</div>
+		</div>
+	)
 }
 
 export default ToDoList

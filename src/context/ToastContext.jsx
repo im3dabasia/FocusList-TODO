@@ -27,32 +27,32 @@ const ToastContext = createContext()
  * @returns {JSX.Element} The `ToastContext.Provider` wrapped around the child components.
  */
 export const ToastProvider = ( { children } ) => {
-  const [ toasts, setToasts ] = useState( [] )
+	const [ toasts, setToasts ] = useState( [] )
 
-  /**
-   * @function addToast
-   * @description Adds a new toast notification to the toast list.
-   *
-   * @param {string} message - The message to be displayed in the toast.
-   * @param {string} [type='success'] - The type of toast.
-   *
-   * @returns {void}
-   */
-  const addToast = ( message, type = 'success' ) => {
-    setToasts( [ ...toasts, { message, type } ] )
+	/**
+	 * @function addToast
+	 * @description Adds a new toast notification to the toast list.
+	 *
+	 * @param {string} message - The message to be displayed in the toast.
+	 * @param {string} [type='success'] - The type of toast.
+	 *
+	 * @returns {void}
+	 */
+	const addToast = ( message, type = 'success' ) => {
+		setToasts( [ ...toasts, { message, type } ] )
 
-    // Remove the toast after 3 seconds
-    setTimeout( () => {
-      setToasts( toasts.slice( 1 ) )
-    }, 3000 )
-  }
+		// Remove the toast after 3 seconds
+		setTimeout( () => {
+			setToasts( toasts.slice( 1 ) )
+		}, 3000 )
+	}
 
-  return (
-    <ToastContext.Provider value={{ addToast }}>
-      {children}
-      <ToastContainer toasts={toasts} />
-    </ToastContext.Provider>
-  )
+	return (
+		<ToastContext.Provider value={ { addToast } }>
+			{ children }
+			<ToastContainer toasts={ toasts } />
+		</ToastContext.Provider>
+	)
 }
 
 /**
@@ -62,5 +62,5 @@ export const ToastProvider = ( { children } ) => {
  * @returns {object} - An object containing the `addToast` function.
  */
 export const useToast = () => {
-  return useContext( ToastContext )
+	return useContext( ToastContext )
 }

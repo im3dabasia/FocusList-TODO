@@ -5,7 +5,7 @@
  *
  * @package FocusList
  *
-*/
+ */
 
 import React from 'react'
 
@@ -15,10 +15,13 @@ import ToDo from './components/ToDo'
 // Import Assets.
 import './App.scss'
 
-function App() {
-  return (
-    <ToDo/>
-  )
+/**
+ * The main application component.
+ *
+ * @returns {JSX.Element} The ToDo component wrapped in the App component.
+ */
+function App () {
+	return <ToDo />
 }
 
 export default App

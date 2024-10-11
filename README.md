@@ -16,9 +16,6 @@ FocusList is a simple todo app built using basic React concepts. It allows users
 To get started with **FocusList**, follow these steps:
 
 1. Clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/im3dabasia/FocusList.git
-   ```
 
 2. Navigate to the project directory:
 
@@ -42,7 +39,7 @@ The app will open in your browser at http://localhost:3000.
 
 ## Deployment
 
-The site is deployed using Vercel and can be accessed at: https://focus-list-bwfc9vwd3-im3dabasias-projects.vercel.app/
+The site is deployed using Vercel and can be accessed at: https://focus-list-todo-git-main-im3dabasias-projects.vercel.app/
 
 ## Technologies Used
 

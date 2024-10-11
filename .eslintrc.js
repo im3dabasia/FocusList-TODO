@@ -1,45 +1,37 @@
-// eslint-disable-next-line no-undef
+/* eslint-disable no-undef */
 module.exports = {
-  root: true,
-  parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true
-    }
-  },
-  env: {
-    browser: true
-  },
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:eslint-comments/recommended'
-  ],
-  rules: {
-    'react/react-in-jsx-scope': 'off',
-    'react/prop-types': 'off',
-    'space-in-parens': [ 'error', 'always' ],
-    'array-bracket-spacing': [ 'error', 'always' ],
-    'object-curly-spacing': [ 'error', 'always' ],
-    'space-before-blocks': [ 'error', 'always' ],
-    'space-infix-ops': 'error',
-    'space-unary-ops': [
-      'error',
-      {
-        words: true,
-        nonwords: false,
-        overrides: {
-          '!': true,
-          '++': false,
-          '--': false
-        }
-      }
-    ]
-  },
-  settings: {
-    react: {
-      version: 'detect'
-    }
-  }
-}
+	root: true,
+	env: {
+		browser: true,
+	},
+	extends: [ 'react-app', 'eslint:recommended', 'plugin:react/recommended' ],
+	plugins: [ 'react', 'prettier' ],
+	rules: {
+		'prettier/prettier': 0,
+		'react/prop-types': 'off',
+		'no-unused-vars': 'warn',
+		'no-console': 'warn',
+		'no-var': 'error',
+		'prefer-const': 'error',
+		eqeqeq: 'error',
+		'no-empty': 'error',
+		'no-trailing-spaces': 'error',
+		'no-multi-spaces': 'error',
+		'no-duplicate-imports': 'error',
+		'brace-style': [ 'error', '1tbs' ],
+		'keyword-spacing': 'error',
+		'space-before-blocks': 'error',
+		'space-infix-ops': 'error',
+		'space-before-function-paren': 'error',
+		'object-curly-spacing': [ 'error', 'always' ],
+		'array-bracket-spacing': [ 'error', 'always' ],
+		'no-multiple-empty-lines': [ 'error', { max: 1 } ],
+		'space-in-parens': [ 'error', 'always' ],
+		'react/jsx-curly-spacing': [ 'error', { when: 'always', children: true } ],
+	},
+	settings: {
+		react: {
+			version: 'detect',
+		},
+	},
+};
