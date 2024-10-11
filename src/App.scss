@@ -120,6 +120,9 @@ h2 {
 		height: 50px;
 		width: 50px;
 		transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		&:hover {
 			background-color: $background-color_4;
